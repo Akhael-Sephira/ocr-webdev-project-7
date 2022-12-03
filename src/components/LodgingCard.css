@@ -1,0 +1,40 @@
+
+.lodging-card {
+    background-color: var(--primary-color);
+    border-radius: .5rem;
+    padding: 1.5rem;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+.lodging-card::after {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    background: linear-gradient(transparent, black);
+    opacity: .5;
+}
+
+.lodging-card > img {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.lodging-card > p {
+    color: white;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+}
