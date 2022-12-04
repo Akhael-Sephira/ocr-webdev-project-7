@@ -1,0 +1,35 @@
+.collapsible {
+    margin: 1rem;
+    background-color: var(--container-background-color);
+}
+
+.collapsible,
+.collapsible > .summary {
+    border-radius: .25rem;
+}
+
+.collapsible > .summary,
+.collapsible > .content {
+    padding: .5rem;
+}
+
+.collapsible > .summary {
+    background-color: var(--primary-color);
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+
+    cursor: pointer;
+}
+.collapsible > .summary::after {
+    content: url('../assets/images/arrow.svg');
+    rotate: 180deg;
+}
+.collapsible[open] > .summary::after {
+    rotate: 00deg;
+}
+.collapsible > .content {
+    color: var(--primary-color);
+    font-weight: 400;
+}
