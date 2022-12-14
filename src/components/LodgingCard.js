@@ -1,13 +1,12 @@
 import './LodgingCard.css'
+import { Link } from 'react-router-dom'
 
 export default function LodgingCard({ title, imgSrc, id }) {
 
-    const handleClick = () => { };
-
     return (
-        <div className='lodging-card' onClick={handleClick}>
-            <img src={imgSrc} />
-            <p>{title}</p>
-        </div>
+        <Link className='lodging-card' to={'/lodging/' + id}>
+            <img className='lodging-card__img' src={imgSrc} />
+            <span className='lodging-card__title'>{title}</span>
+        </Link>
     )
 }

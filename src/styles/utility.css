@@ -1,0 +1,17 @@
+
+.large-block {
+  max-width: 1200px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 90%;
+}
+.medium-block {
+  max-width: 1000px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 90%;
+}
+
+.paddingless-block {
+  width: 100%;
+}

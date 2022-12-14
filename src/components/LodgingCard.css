@@ -1,7 +1,7 @@
 
 .lodging-card {
     background-color: var(--primary-color);
-    border-radius: .5rem;
+    border-radius: var(--border-radius-small);
     padding: 1.5rem;
     width: 100%;
     height: 100%;
@@ -11,6 +11,8 @@
     display: flex;
     flex-direction: column;
     justify-content: end;
+
+    text-decoration: none;
 }
 .lodging-card::after {
     content: "";
@@ -22,7 +24,7 @@
     opacity: .5;
 }
 
-.lodging-card > img {
+.lodging-card__img {
     position: absolute;
     z-index: 0;
     top: 0;
@@ -32,9 +34,8 @@
     object-fit: cover;
 }
 
-.lodging-card > p {
+.lodging-card__title {
     color: white;
     margin: 0;
-    position: relative;
-    z-index: 2;
+    z-index: 3;
 }

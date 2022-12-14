@@ -1,16 +1,16 @@
 .collapsible {
-    margin: 1rem;
+    margin: 1rem 0;
     background-color: var(--container-background-color);
 }
 
 .collapsible,
 .collapsible > .summary {
-    border-radius: .25rem;
+    border-radius: var(--border-radius-medium);
 }
 
 .collapsible > .summary,
 .collapsible > .content {
-    padding: .5rem;
+    padding: .5rem 1rem;
 }
 
 .collapsible > .summary {
@@ -32,4 +32,18 @@
 .collapsible > .content {
     color: var(--primary-color);
     font-weight: 400;
+}
+
+.collapsible.big-summary > .summary {
+    padding-top: .8rem;
+    padding-bottom: .8rem;
+}
+
+@media (max-width: 600px) {
+    .collapsible > .summary {
+        font-size: .8125rem;
+    }
+    .collapsible > .content {
+        font-size: .75rem;
+    }
 }

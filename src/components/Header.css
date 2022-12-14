@@ -30,3 +30,21 @@ header a {
     height: .2em;
     background-color: aquamarine;
 } */
+
+@media (max-width: 600px) {
+
+    header {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    header > img {
+        width: 10rem;
+    }
+    header ul {
+        gap: 1.5rem;
+    }
+    header a {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+    }  
+}
