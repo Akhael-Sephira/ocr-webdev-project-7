@@ -23,7 +23,7 @@
     cursor: pointer;
 }
 .collapsible > .summary::after {
-    content: url('../assets/images/arrow.svg');
+    content: url('../../assets/images/arrow.svg');
     rotate: 180deg;
 }
 .collapsible[open] > .summary::after {

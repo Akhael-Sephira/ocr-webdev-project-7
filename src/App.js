@@ -1,11 +1,11 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import Header from './Header';
-import Footer from './Footer';
-import Home from '../pages/Home';
-import About from '../pages/About';
-import Lodging from '../pages/Lodging';
-import NotFound from '../pages/NotFound';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import Home from './pages/Home/Home';
+import About from './pages/About/About';
+import Lodging from './pages/Lodging/Lodging';
+import NotFound from './pages/NotFound/NotFound';
 
 function App() {
   return (

@@ -1,11 +1,11 @@
 import { Navigate, useParams } from "react-router-dom"
 import { useMemo } from 'react'
-import lodgings from '../assets/logements.json'
-import Slideshow from "../components/Slideshow";
-import starEmpty from "../assets/images/star-empty.svg"
-import starFilled from "../assets/images/star-filled.svg"
-import Collapse from "../components/Collapse";
-import NotFound from "./NotFound";
+import lodgings from '../../data/logements.json'
+import Slideshow from "../../components/Slideshow/Slideshow";
+import starEmpty from "../../assets/images/star-empty.svg"
+import starFilled from "../../assets/images/star-filled.svg"
+import Collapsible from "../../components/Collapsible/Collapsible";
+import NotFound from "../NotFound/NotFound";
 import './Lodging.css'
 
 export default function Lodging() {
@@ -16,7 +16,6 @@ export default function Lodging() {
     }, [id]);
 
     if (!lodging) return <NotFound />
-    // if (!lodging) return <Navigate to="*" />
     
     return (
         <>
@@ -44,8 +43,8 @@ export default function Lodging() {
                 </div>
             </div>
             <div className="large-block collapsibles-block">
-                <Collapse className="big-summary lodging-description" summary="Description"><p>{lodging.description}</p></Collapse>
-                <Collapse className="big-summary lodging-tools" summary="Équipements">
+                <Collapsible className="big-summary lodging-description" summary="Description"><p>{lodging.description}</p></Collapsible>
+                <Collapsible className="big-summary lodging-tools" summary="Équipements">
                     <ul>
                         {lodging.equipments.map((equipment, index) => {
                             return (
@@ -53,7 +52,7 @@ export default function Lodging() {
                             )
                         })}
                     </ul>
-                </Collapse>
+                </Collapsible>
             </div>
         </>
     )
