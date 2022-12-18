@@ -1,12 +1,12 @@
-footer {
+.footer {
     background-color: black;
     color: white;
     padding-top: 3rem; 
     padding-bottom: 1rem; 
     text-align: center;
     margin-top: 6rem;
-}
 
-footer > img {
-    height: 2.5rem;
+    &__logo {
+        height: 2.5rem;
+    }
 }

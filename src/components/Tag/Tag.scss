@@ -1,0 +1,19 @@
+@import '../../styles/variables';
+
+.tag {
+    background-color: var(--primary-color);
+    padding: .35em 1.75em;
+    border-radius: var(--border-radius-medium);
+    color: white;
+    font-weight: 500;
+    font-size: .875rem;
+}
+
+@media (max-width: $mobile-break-point) {
+
+    .tag {
+        font-size: .625rem;
+        border-radius: var(--border-radius-small);
+    }
+    
+}

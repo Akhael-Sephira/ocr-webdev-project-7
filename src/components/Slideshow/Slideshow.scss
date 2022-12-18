@@ -1,0 +1,86 @@
+@import '../../styles/variables';
+
+.slideshow {
+    border-radius: 2rem;
+    overflow: hidden;
+    position: relative;
+    height: 26rem;
+    background-color: black;
+
+
+    &::after {
+        z-index: 0;
+        content: 'Loading...';
+        color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+    }
+
+    &__img {
+        z-index: 1;
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        background-position: 50% 50%;
+        background-size: cover;
+    }
+
+    &__left-btn,
+    &__right-btn {
+        z-index: 2;
+        position: absolute;
+        top: 50%;
+        translate: 0% -50%;
+        cursor: pointer;
+        height: 3rem;
+        aspect-ratio:  80 / 47;
+        border: none;
+        background: transparent;
+    }
+
+    &__left-btn > img,
+    &__right-btn > img {
+        width: 100%;
+    }
+
+    &__left-btn {
+        rotate: 270deg;
+        left: 1rem;
+    }
+
+    &__right-btn {
+        rotate: 90deg;
+        right: 1rem;
+    }
+
+    &__indicator {
+        z-index: 2;
+        position: absolute;
+        bottom: 1rem;
+        translate: 50% 0%;
+        right: 50%;
+        color: white;
+    }
+}
+
+
+@media (max-width: $mobile-break-point) {
+    .slideshow {
+        height: 18rem;
+
+        &__left-btn,
+        &__right-btn {
+            height: 1.5rem;
+        }
+        &__left-btn {
+            left: .5rem;
+        }
+        &__right-btn {
+            right: .5rem;
+        }
+    }
+}

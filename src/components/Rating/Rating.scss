@@ -1,0 +1,14 @@
+@import '../../styles/variables';
+
+.rating > * {
+    width: 2.25rem;
+    height: 2.25rem;
+}
+
+@media (max-width: $mobile-break-point) {
+
+    .rating > * {
+        width: 1.125rem;
+        height: 1.125rem;
+    }
+}

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './Slideshow.css'
+import './Slideshow.scss'
 import arrowImg from '../../assets/images/arrow.svg'
 
 export default function Slideshow({pictures}) {
@@ -7,10 +7,10 @@ export default function Slideshow({pictures}) {
 
     const changeImg = (direction) => {
         if (direction < 0) {
-            if (currentlyShown == 0) setCurrentlyShown(pictures.length - 1);
+            if (currentlyShown === 0) setCurrentlyShown(pictures.length - 1);
             else setCurrentlyShown(currentlyShown - 1);
         } else {
-            if (currentlyShown == pictures.length - 1) setCurrentlyShown(0);
+            if (currentlyShown === pictures.length - 1) setCurrentlyShown(0);
             else setCurrentlyShown(currentlyShown + 1);
         }
     }
@@ -22,21 +22,8 @@ export default function Slideshow({pictures}) {
             {
                 pictures.length > 1 &&
                 <>
-                    <button className='slideshow__left-btn' onClick={() => { changeImg(-1) }}><img src={arrowImg} /></button>
-                    <button className='slideshow__right-btn' onClick={() => { changeImg(1) }}><img src={arrowImg} /></button>
-                </>
-            }
-            <p className='slideshow__indicator'>{(currentlyShown + 1) + '/' + pictures.length}</p>
-        </div>
-    )
-    return (
-        <div className="slideshow large-block">
-            <img className='slideshow__img' src={pictures[currentlyShown]} />
-            {
-                pictures.length > 1 &&
-                <>
-                    <button className='slideshow__left-btn' onClick={() => { changeImg(-1) }}><img src={arrowImg} /></button>
-                    <button className='slideshow__right-btn' onClick={() => { changeImg(1) }}><img src={arrowImg} /></button>
+                    <button className='slideshow__left-btn' onClick={() => { changeImg(-1) }}><img src={arrowImg} alt="left arrow" /></button>
+                    <button className='slideshow__right-btn' onClick={() => { changeImg(1) }}><img src={arrowImg} alt="right arrow" /></button>
                 </>
             }
             <p className='slideshow__indicator'>{(currentlyShown + 1) + '/' + pictures.length}</p>

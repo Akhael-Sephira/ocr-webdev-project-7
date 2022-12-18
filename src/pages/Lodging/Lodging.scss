@@ -1,0 +1,120 @@
+
+.lodging {
+
+    &__title,
+    &__location,
+    &__hostname {
+        color: var(--primary-color);
+        font-weight: 500;
+    }
+    &__title {
+        grid-area: title;
+        font-size: 2.25rem;
+        margin-bottom: 0.25rem;
+    }
+    &__location {
+        grid-area: location;
+        font-size: 1.125rem;
+        margin-top: 0.25rem;
+    }
+    &__hostname {
+        font-size: 1.125rem;
+        width: min-content;
+        text-align: right;
+    }
+    &__hostpic {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+    }
+    &__tag-list {
+        grid-area: tags;
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        padding: 0;
+        gap: .75rem;
+    }
+    &__hostinfo {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        
+        grid-area: host;
+        align-self: center;
+        justify-self: flex-end;
+    }
+    &__rating {
+        grid-area: rating;
+        align-self: center;
+        justify-self: flex-end;
+    }
+    
+    
+    &__informations {
+        display: grid;
+        grid-template: 
+            "title host"
+            "location host"
+            "tags rating"
+        ;
+    }
+    
+    &__collapsibles-block {
+        display: grid;
+        grid-template-columns: 45% 45%;
+        gap: .5rem 10%;
+        align-items: flex-start;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .lodging {
+
+        &__informations {
+            display: grid;
+            grid-template: 
+                "title title"
+                "location location"
+                "tags tags"
+                "rating host"
+            ;
+        }
+        &__rating {
+            justify-self: flex-start;
+        }
+    
+        &__title {
+            font-size: 1.125rem;
+            margin-bottom: .5rem;
+        }
+        &__location {
+            font-size: .875rem;
+            margin-top: .5rem;
+            margin-bottom: .5rem;
+        }
+        &__hostname {
+            font-size: 1.125rem;
+            width: min-content;
+            text-align: right;
+        }
+        &__tag-list {
+            margin-top: .5rem;
+            margin-bottom: .5rem;
+        }
+        &__hostname {
+            font-size: .75rem;
+        }
+        &__hostpic {
+            width: 2rem;
+            height: 2rem;
+        }
+        &__collapsibles-block {
+            grid-template-columns: 100%;
+        }
+        &__collapsibles-block > .collapsible {
+            margin-bottom: 0rem;
+        }
+    }
+}

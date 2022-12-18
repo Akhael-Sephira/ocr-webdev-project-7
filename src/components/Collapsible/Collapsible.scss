@@ -1,0 +1,57 @@
+@import '../../styles/variables';
+
+.collapsible {
+    margin: 1rem 0;
+    background-color: var(--container-background-color);
+    border-radius: var(--border-radius-medium);
+
+    &__summary,
+    &__content {
+        padding: .5rem 1rem;
+    }
+    
+    &__summary {
+        border-radius: var(--border-radius-medium);
+
+        background-color: var(--primary-color);
+        color: white;
+    
+        display: flex;
+        justify-content: space-between;
+    
+        cursor: pointer;
+
+        &::after {
+            content: url('../../assets/images/arrow.svg');
+            rotate: 180deg;    
+        }
+    }
+
+    &__content {
+        color: var(--primary-color);
+        font-weight: 400;
+    }
+
+    [open=""] &__summary {
+        &::after {
+            rotate: 00deg;       
+        }
+    }
+
+    &--big-summary &__summary {
+        padding-top: .8rem;
+        padding-bottom: .8rem;
+    }
+}
+
+
+@media (max-width: $mobile-break-point) {
+    .collapsible {
+        &__summary {
+            font-size: .8125rem;
+        }
+        &__content {
+            font-size: .75rem;
+        }
+    }
+}

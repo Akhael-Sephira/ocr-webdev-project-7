@@ -1,4 +1,4 @@
-import './Collapsible.css'
+import './Collapsible.scss'
 
 import { useState } from 'react'
 
@@ -7,8 +7,8 @@ export default function Collapsible({ children, summary, className, open=false }
 
     return (
         <div className={'collapsible ' + className} onClick={() => {setOpenState(!openState)}} open={openState}>
-            <div className='summary'>{summary}</div>
-            { openState && <div className='content'>{children}</div> }
+            <div className='collapsible__summary'>{summary}</div>
+            { openState && <div className='collapsible__content'>{children}</div> }
         </div>
     )
 }

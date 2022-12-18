@@ -1,6 +1,6 @@
 import Banner from "../../components/Banner/Banner";
 import LodgingCard from "../../components/LodgingCard/LodgingCard";
-import './Home.css'
+import './Home.scss'
 import lodgings from '../../data/logements.json'
 
 export default function Home() {
