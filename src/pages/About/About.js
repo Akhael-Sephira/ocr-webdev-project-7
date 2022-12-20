@@ -1,10 +1,12 @@
 import Banner from "../../components/Banner/Banner";
 import Collapse from "../../components/Collapsible/Collapsible";
 
+import bannerImg from "../../assets/images/banner-about.jpg"
+
 export default function About() {
     return (
         <>
-            <Banner />
+            <Banner image={bannerImg} />
             <Collapse className="medium-block" summary="Fiabilité">
                 Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées  par nos équipes.
             </Collapse>

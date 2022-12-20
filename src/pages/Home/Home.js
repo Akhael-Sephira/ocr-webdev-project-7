@@ -2,11 +2,12 @@ import Banner from "../../components/Banner/Banner";
 import LodgingCard from "../../components/LodgingCard/LodgingCard";
 import './Home.scss'
 import lodgings from '../../data/logements.json'
+import bannerImg from '../../assets/images/banner.jpg'
 
 export default function Home() {
     return (
         <>
-            <Banner></Banner>
+            <Banner image={bannerImg}>Chez vous, partout et ailleurs</Banner>
             <ul className="lodging-list large-block">
                 {lodgings.map(item => {
                     return (

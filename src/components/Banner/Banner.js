@@ -1,11 +1,14 @@
-import bannerImg from '../../assets/images/banner.jpg'
 import './Banner.scss'
 
-export default function Banner() {
+export default function Banner({ children, image }) {
+
+    let bannerStyle = {
+        backgroundImage: `url(${image})`
+    }
+
     return (
-        <div className='banner large-block'>
-            <h1 className='banner__title'>Chez vous, partout et ailleurs</h1>
-            <img className='banner__img' src={bannerImg} alt="banner" />
+        <div className='banner large-block' style={bannerStyle}>
+            <h1 className='banner__title'>{children}</h1>
         </div>
     )
 }
