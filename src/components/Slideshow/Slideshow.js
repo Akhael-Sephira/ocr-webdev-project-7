@@ -15,7 +15,6 @@ export default function Slideshow({pictures}) {
         }
     }
 
-
     return (
         <div className="slideshow large-block">
             <div className='slideshow__img' style={{ backgroundImage: `url(${pictures[currentlyShown]})`}} />

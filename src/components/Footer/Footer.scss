@@ -1,12 +1,24 @@
 .footer {
     background-color: black;
     color: white;
-    padding-top: 3rem; 
-    padding-bottom: 1rem; 
+    padding-top: 3em; 
+    padding-bottom: 1em; 
     text-align: center;
-    margin-top: 6rem;
+    margin-top: 6em;
 
     &__logo {
-        height: 2.5rem;
+        width: 7.625rem;
     }
+
+    &__copyrights {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer {
+        &__copyrights {
+            font-size: .75rem;
+        }
+    }  
 }

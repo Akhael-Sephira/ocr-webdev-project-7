@@ -14,7 +14,7 @@
     &__title {
         font-size: 18rem;
         color: var(--primary-color);
-        margin: 1rem;
+        margin-bottom: .2em;
         font-weight: 900;
     }
     &__text {
@@ -23,7 +23,6 @@
     }
     &__link {
         font-size: 1.125rem;
-        margin-bottom: 10em;
     }
 }
 
@@ -41,7 +40,6 @@
         }
         &__link {
             font-size: 0.875rem;
-            margin-bottom: 10em;
         }
     }
 }

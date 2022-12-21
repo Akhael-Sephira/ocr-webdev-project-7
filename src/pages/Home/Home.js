@@ -2,7 +2,7 @@ import Banner from "../../components/Banner/Banner";
 import LodgingCard from "../../components/LodgingCard/LodgingCard";
 import './Home.scss'
 import lodgings from '../../data/logements.json'
-import bannerImg from '../../assets/images/banner.jpg'
+import bannerImg from '../../assets/images/banner-home.jpg'
 
 export default function Home() {
     return (

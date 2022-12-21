@@ -1,16 +1,16 @@
 .lodging-list {
     background-color: var(--container-background-color);
     border-radius: var(--border-radius-medium);
-    padding: 2.5rem;
+    padding: 2.5em;
     list-style: none;
 
     display: flex;
     flex-wrap: wrap;
-    gap: 2.5rem;
+    gap: 2.5em;
 
     > * {
         flex: 1;
-        flex-basis: 300px;
+        flex-basis: 21rem;
         aspect-ratio: 1 / 1;
     }
 }
@@ -21,5 +21,9 @@
     .lodging-list {
         padding: 0;
         background: transparent;
+
+        > * {
+            aspect-ratio: 355 / 255;
+        }
     }
 }

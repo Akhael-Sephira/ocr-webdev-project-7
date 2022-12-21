@@ -2,17 +2,24 @@
 
 .header {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    height: 4rem;
-    margin-top: 3rem;
-    margin-bottom: 4rem;
+    height: 4em;
+    margin-top: 3em;
+    margin-bottom: 4em;
+
+    &__logo {
+        width: 13rem;
+    }
 
     &__nav ul {
         
         list-style: none;
         display: flex;
-        gap: 3rem;
+        gap: 3em;
+
+        padding: 0;
     }
 
     &__nav a {
@@ -29,14 +36,14 @@
 @media (max-width: $mobile-break-point) {
 
     .header {
-        margin-top: 1rem;
-        margin-bottom: 1rem;
+        margin-top: 1em;
+        margin-bottom: 1em;
 
         &__logo {
-            width: 10rem;
+            width: 9rem;
         }
         &__nav ul {
-            gap: 1.5rem;
+            gap: 1.5em;
         }
         &__nav a {
             font-size: 0.75rem;
