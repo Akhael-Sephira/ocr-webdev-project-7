@@ -4,7 +4,12 @@
     padding-top: 3em; 
     padding-bottom: 1em; 
     text-align: center;
-    margin-top: 6em;
+    // margin-top: 6em;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
 
     &__logo {
         width: 7.625rem;

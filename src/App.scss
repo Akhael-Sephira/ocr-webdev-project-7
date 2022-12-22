@@ -12,4 +12,9 @@ body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
+  min-height: 100vh;
+  position: relative;
+
+  // Footer height + margin size - As the footer is using absolute positionning to stay at the bottom.
+  padding-bottom: 250px;
 }
