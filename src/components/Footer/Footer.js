@@ -1,6 +1,9 @@
 import logo from '../../assets/images/logo-white.svg'
 import './Footer.scss'
 
+/*
+ * Creates a footer component
+ */
 export default function Footer() {
     return (
         <footer className='footer'>

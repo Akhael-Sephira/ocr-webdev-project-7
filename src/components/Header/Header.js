@@ -2,6 +2,9 @@ import { NavLink } from "react-router-dom";
 import logo from '../../assets/images/logo.svg'
 import './Header.scss'
 
+/**
+ * Creates a header component with a basic navigation.
+ */
 export default function Header() {
     return (
         <header className="header large-block">

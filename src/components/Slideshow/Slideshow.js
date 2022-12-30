@@ -2,7 +2,11 @@ import { useState } from 'react'
 import './Slideshow.scss'
 import arrowImg from '../../assets/images/arrow.svg'
 
-export default function Slideshow({pictures}) {
+/**
+ * Creates a slide show component.
+ * @param pictures defines all the images of the slide show.
+ */
+export default function Slideshow({pictures, className}) {
     const [currentlyShown, setCurrentlyShown] = useState(0);
 
     const changeImg = (direction) => {
@@ -16,7 +20,7 @@ export default function Slideshow({pictures}) {
     }
 
     return (
-        <div className="slideshow large-block">
+        <div className={"slideshow large-block " + className}>
             <div className='slideshow__img' style={{ backgroundImage: `url(${pictures[currentlyShown]})`}} />
             {
                 pictures.length > 1 &&
