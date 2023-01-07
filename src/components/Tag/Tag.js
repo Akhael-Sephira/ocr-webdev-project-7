@@ -5,6 +5,15 @@ import './Tag.scss';
  * @param children defines the content
  */
 export default function Tag({ children, className }) {
-    return (<div className={'tag ' + className}>{children}</div>)
+
+    let cname = 'tag';
+    if (className !== undefined) {
+        cname += ` ${className}`;
+    };
+
+    return (
+        <div className={cname}>
+            {children}
+        </div>)
 }
 

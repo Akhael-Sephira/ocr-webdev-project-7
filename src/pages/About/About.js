@@ -5,8 +5,8 @@ import bannerImg from "../../assets/images/banner-about.jpg"
 
 export default function About() {
     return (
-        <>
-            <Banner image={bannerImg} />
+        <main id="page-about">
+            <Banner image={bannerImg} className="large-block" />
             <Collapse className="medium-block collapsible--small-border" summary="Fiabilité">
                 <p>
                     Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées  par nos équipes.
@@ -27,6 +27,6 @@ export default function About() {
                     La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes.
                 </p>
             </Collapse>
-        </>
+        </main>
     )
 }

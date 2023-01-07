@@ -19,9 +19,23 @@ export default function Slideshow({pictures, className}) {
         }
     }
 
+    let cname = 'slideshow';
+    if (className !== undefined) {
+        cname += ` ${className}`;
+    };
+
     return (
-        <div className={"slideshow large-block " + className}>
-            <div className='slideshow__img' style={{ backgroundImage: `url(${pictures[currentlyShown]})`}} />
+        <div className={cname}>
+            
+            <div className='slideshow__img'>
+                {
+                    pictures.map((img, index) => {
+                        return (
+                            <img key={index} src={img} alt={"slideshow picture " + index} style={{ opacity: index === currentlyShown ? 1 : 0 }} />
+                        )
+                    })
+                }
+            </div>
             {
                 pictures.length > 1 &&
                 <>

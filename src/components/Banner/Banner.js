@@ -11,8 +11,13 @@ export default function Banner({ children, image, className }) {
         backgroundImage: `url(${image})`
     }
 
+    let cname = 'banner';
+    if (className !== undefined) {
+        cname += ` ${className}`;
+    };
+
     return (
-        <div className={'banner large-block ' + className } style={bannerStyle}>
+        <div className={cname} style={bannerStyle}>
             { children && <h1 className='banner__title'>{children}</h1> }
         </div>
     )

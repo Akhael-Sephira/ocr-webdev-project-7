@@ -12,10 +12,15 @@ import { useState } from 'react'
 export default function Collapsible({ children, summary, className, open=false }) {
     const [openState, setOpenState] = useState(open);
 
+    let cname = 'collapsible';
+    if (className !== undefined) {
+        cname += ` ${className}`;
+    };
+
     return (
-        <div className={'collapsible ' + className} onClick={() => {setOpenState(!openState)}} open={openState}>
-            <div className='collapsible__summary'>{summary}</div>
-            { openState && <div className='collapsible__content'>{children}</div> }
+        <div className={cname} open={openState}>
+            <div className='collapsible__summary' onClick={() => {setOpenState(!openState)}}>{summary}</div>
+            <div className='collapsible__content'>{children}</div>
         </div>
     )
 }

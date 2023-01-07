@@ -7,10 +7,15 @@ import { Link } from 'react-router-dom'
  * @param imgSrc defines the source image for the card.
  * @param id defines the associated id used for the link.
  */
-export default function LodgingCard({ title, imgSrc, id }) {
+export default function LodgingCard({ title, imgSrc, id, className }) {
+
+    let cname = 'lodging-card';
+    if (className !== undefined) {
+        cname += ` ${className}`;
+    };
 
     return (
-        <Link className='lodging-card' to={'/lodging/' + id}>
+        <Link className={cname} to={'/lodging/' + id}>
             <img className='lodging-card__thumb' src={imgSrc} alt="thumbnail" />
             { title && <span className='lodging-card__title'>{title}</span>}
         </Link>

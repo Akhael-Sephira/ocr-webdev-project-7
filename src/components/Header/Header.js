@@ -5,9 +5,15 @@ import './Header.scss'
 /**
  * Creates a header component with a basic navigation.
  */
-export default function Header() {
+export default function Header({className}) {
+
+    let cname = 'header';
+    if (className !== undefined) {
+        cname += ` ${className}`;
+    };
+
     return (
-        <header className="header large-block">
+        <header className={cname}>
             <img className="header__logo" src={logo} alt="logo" />
             <nav className="header__nav">
                 <ul>

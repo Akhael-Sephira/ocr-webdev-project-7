@@ -7,12 +7,14 @@ import About from './pages/About/About';
 import Lodging from './pages/Lodging/Lodging';
 import NotFound from './pages/NotFound/NotFound';
 
+import lodgings from './data/logements.json'
+
 function App() {
   return (
     <>
-      <Header></Header>
+      <Header className="large-block"></Header>
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Home lodgings={lodgings} />} />
         <Route path='/about' element={<About />} />
         <Route path='/lodging/:id' element={<Lodging />} />
         <Route path='*' element={<NotFound />} />

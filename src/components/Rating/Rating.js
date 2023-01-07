@@ -9,8 +9,14 @@ import starFilled from "../../assets/images/star-filled.svg"
  * Note: The stars have only 2 states, they can't be partialy filled.
  */
 export default function Rating({ note, className }) {
+
+    let cname = 'rating';
+    if (className !== undefined) {
+        cname += ` ${className}`;
+    };
+
     return (
-        <div className={'rating ' + className}>
+        <div className={cname}>
             {[1,2,3,4,5].map((rating, index) => {
                 return (
                     <img key={index} src={note >= rating ? starFilled : starEmpty } alt="" />

@@ -18,8 +18,8 @@ export default function Lodging() {
     if (!lodging) return <NotFound />
     
     return (
-        <>
-            <Slideshow pictures={lodging.pictures}></Slideshow>
+        <main id="page-lodging">
+            <Slideshow pictures={lodging.pictures} className="large-block"></Slideshow>
             <div className="large-block lodging__informations">
                     <h1 className="lodging__title">{lodging.title}</h1>
                 <p className="lodging__location">{lodging.location}</p>
@@ -48,6 +48,6 @@ export default function Lodging() {
                     </ul>
                 </Collapsible>
             </div>
-        </>
+        </main>
     )
 }
