@@ -16,7 +16,7 @@ export default function LodgingCard({ title, imgSrc, id, className }) {
 
     return (
         <Link className={cname} to={'/lodging/' + id}>
-            <img className='lodging-card__thumb' src={imgSrc} alt="thumbnail" />
+            <img className='lodging-card__thumb' src={imgSrc} alt="" />
             { title && <span className='lodging-card__title'>{title}</span>}
         </Link>
     )

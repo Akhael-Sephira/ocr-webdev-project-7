@@ -2,6 +2,7 @@ import Banner from "../../components/Banner/Banner";
 import LodgingCard from "../../components/LodgingCard/LodgingCard";
 import './Home.scss'
 import bannerImg from '../../assets/images/banner-home.jpg'
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 export default function Home({ lodgings }) {
 
@@ -10,7 +11,14 @@ export default function Home({ lodgings }) {
     }
 
     return (
-        <main id="page-home">
+        <main id="main-content" className="home">
+            <HelmetProvider>
+                <Helmet>
+                    <html lang="fr" />
+                    <title>Kasa - Chez vous, partout et ailleurs</title>
+                </Helmet>
+            </HelmetProvider>
+
             <Banner image={bannerImg} className="large-block">Chez vous, partout et ailleurs</Banner>
             <ul className="lodging-list large-block">
                 {lodgings.map(item => {

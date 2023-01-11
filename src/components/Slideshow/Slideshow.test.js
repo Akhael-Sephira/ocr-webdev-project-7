@@ -26,7 +26,7 @@ describe("Slideshow component", () => {
 
         render(<Slideshow pictures={images}></Slideshow>);
 
-        const imgContainer = document.querySelector(".slideshow__img");
+        const imgContainer = document.querySelector(".slideshow__panel");
         const imgNodes = imgContainer.querySelectorAll("img");
 
         expect(imgContainer).not.toBeEmptyDOMElement();
@@ -39,7 +39,7 @@ describe("Slideshow component", () => {
 
         render(<Slideshow pictures={images}></Slideshow>);
 
-        const imgContainer = document.querySelector(".slideshow__img");
+        const imgContainer = document.querySelector(".slideshow__panel");
         const indicator = document.querySelector(".slideshow__indicator");
         const leftBtn = document.querySelector(".slideshow__left-btn");
         const rightBtn = document.querySelector(".slideshow__right-btn");

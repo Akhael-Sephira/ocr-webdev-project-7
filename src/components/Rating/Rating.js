@@ -15,11 +15,20 @@ export default function Rating({ note, className }) {
         cname += ` ${className}`;
     };
 
+    if (note > 5) {
+        note = 5;
+    } else if (note < 0) {
+        note = 0;
+    }
+
     return (
-        <div className={cname}>
+        <div className={cname} aria-label={`Noté ${note}/5`}>
             {[1,2,3,4,5].map((rating, index) => {
                 return (
-                    <img key={index} src={note >= rating ? starFilled : starEmpty } alt="" />
+                    <img key={index} 
+                        src={note >= rating ? starFilled : starEmpty } 
+                        alt="" 
+                    />
                 )
             })}
         </div>

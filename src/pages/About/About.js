@@ -2,10 +2,18 @@ import Banner from "../../components/Banner/Banner";
 import Collapse from "../../components/Collapsible/Collapsible";
 
 import bannerImg from "../../assets/images/banner-about.jpg"
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 export default function About() {
     return (
-        <main id="page-about">
+        <main id="main-content" className="about">
+            <HelmetProvider>
+                <Helmet>
+                    <html lang="fr" />
+                    <title>Kasa - About</title>
+                </Helmet>
+            </HelmetProvider>
+
             <Banner image={bannerImg} className="large-block" />
             <Collapse className="medium-block collapsible--small-border" summary="Fiabilité">
                 <p>

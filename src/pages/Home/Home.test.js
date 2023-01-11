@@ -11,7 +11,7 @@ afterEach(() => {
 describe("Home page", () => {
     test("rendering", () => {
         render(<MemoryRouter><Home></Home></MemoryRouter>);
-        const home = document.querySelector("#page-home");
+        const home = document.querySelector("#main-content.home");
         expect(home).toBeInTheDocument();
     });
 

@@ -7,6 +7,7 @@ import NotFound from "../NotFound/NotFound";
 import './Lodging.scss'
 import Tag from "../../components/Tag/Tag";
 import Rating from "../../components/Rating/Rating";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 export default function Lodging() {
     const { id } = useParams();
@@ -18,7 +19,14 @@ export default function Lodging() {
     if (!lodging) return <NotFound />
     
     return (
-        <main id="page-lodging">
+        <main id="main-content" className="lodging">
+            <HelmetProvider>
+                <Helmet>
+                    <html lang="fr" />
+                    <title>{lodging.title + " - Kasa"}</title>
+                </Helmet>
+            </HelmetProvider>
+
             <Slideshow pictures={lodging.pictures} className="large-block"></Slideshow>
             <div className="large-block lodging__informations">
                     <h1 className="lodging__title">{lodging.title}</h1>

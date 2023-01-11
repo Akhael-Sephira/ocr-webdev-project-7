@@ -1,0 +1,22 @@
+.skip-to-main {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: lightgrey;
+    padding: 1em;
+    border-top-right-radius: .5em;
+    border-bottom-right-radius: .5em;
+    outline: white .15em solid;
+    outline-offset: -.35em;
+    text-decoration: none;
+    color: white;
+
+    transform: translate(-100%, 0);
+    transition: transform .25s ease-in-out;
+
+    border: black solid .15em;
+}
+
+.skip-to-main:focus {
+    transform: translate(-.35em,0);
+}

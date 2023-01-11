@@ -15,12 +15,12 @@ describe("Collapsible component", () => {
         render(<Collapsible summary={summary}>{content}</Collapsible>);
 
         const collapsible = document.querySelector('.collapsible')
-        const collapsible__summary = document.querySelector('.collapsible__summary')
-        const collapsible__content = document.querySelector('.collapsible__content')
+        const collapsible__header = document.querySelector('.collapsible__header')
+        const collapsible__panel = document.querySelector('.collapsible__panel')
         
         expect(collapsible).toBeInTheDocument();
-        expect(collapsible__summary).toHaveTextContent(summary);
-        expect(collapsible__content).toHaveTextContent(content);
+        expect(collapsible__header).toHaveTextContent(summary);
+        expect(collapsible__panel).toHaveTextContent(content);
         expect(collapsible).not.toHaveAttribute("open");
     });
 
@@ -37,9 +37,9 @@ describe("Collapsible component", () => {
 
         const collapsible = document.querySelector('.collapsible')
         
-        const collapsible__summary = document.querySelector('.collapsible__summary')
+        const collapsible__header = document.querySelector('.collapsible__header')
         expect(collapsible).not.toHaveAttribute("open");
-        fireEvent.click(collapsible__summary);
+        fireEvent.click(collapsible__header);
         expect(collapsible).toHaveAttribute("open");
     })
 })

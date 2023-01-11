@@ -25,7 +25,7 @@ describe("App", () => {
                 <App></App>
             </MemoryRouter>
         );
-        const home = document.querySelector("#page-home");
+        const home = document.querySelector("#main-content.home");
 
         expect(home).toBeInTheDocument();
     });
@@ -36,7 +36,7 @@ describe("App", () => {
                 <App></App>
             </MemoryRouter>
         );
-        const notFound = document.querySelector("#page-notfound");
+        const notFound = document.querySelector("#main-content.not-found");
 
         expect(notFound).toBeInTheDocument();
     });
@@ -47,7 +47,7 @@ describe("App", () => {
                 <App></App>
             </MemoryRouter>
         );
-        const about = document.querySelector("#page-about");
+        const about = document.querySelector("#main-content.about");
 
         expect(about).toBeInTheDocument();
     });
@@ -58,7 +58,7 @@ describe("App", () => {
                 <App></App>
             </MemoryRouter>
         );
-        const lodging = document.querySelector("#page-lodging");
+        const lodging = document.querySelector("#main-content.lodging");
 
         expect(lodging).toBeInTheDocument();
     });

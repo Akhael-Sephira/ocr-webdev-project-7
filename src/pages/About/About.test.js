@@ -9,7 +9,7 @@ describe("About page", () => {
 
     test("rendering", () => {
         render(<About></About>);
-        const about = document.querySelector("#page-about");
+        const about = document.querySelector("#main-content.about");
         expect(about).toBeInTheDocument();
     });
 });

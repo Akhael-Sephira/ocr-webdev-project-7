@@ -15,7 +15,7 @@ describe("Lodging page", () => {
                 </Routes>
             </MemoryRouter>
         );
-        const lodging = document.querySelector("#page-lodging");
+        const lodging = document.querySelector("#main-content.lodging");
         expect(lodging).toBeInTheDocument();
     });
 
@@ -27,7 +27,7 @@ describe("Lodging page", () => {
                 </Routes>
             </MemoryRouter>
         );
-        const notFound = document.querySelector("#page-notfound");
+        const notFound = document.querySelector("#main-content.not-found");
         expect(notFound).toBeInTheDocument();
     });
 });

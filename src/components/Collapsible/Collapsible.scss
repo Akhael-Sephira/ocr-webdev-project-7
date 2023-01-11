@@ -8,17 +8,23 @@
 
     position: relative;
 
-    &__summary,
-    &__content {
+    &__header,
+    &__panel {
         padding-left: 1em;
         padding-right: 1em;
     }
     
-    &__summary {
+    &__header {
         padding-top: .8em;
         padding-bottom: .8em;
 
+        width: 100%;
+        font-size: 1em;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+
         border-radius: var(--border-radius-medium);
+        border: none;
 
         background-color: var(--primary-color);
         color: white;
@@ -40,29 +46,28 @@
         }
     }
 
-    &__content {
+    &__panel {
+        display: block;
         color: var(--primary-color);
         font-weight: 400;
 
-        padding-top: .3em;
-        padding-bottom: .15em;
-
         transition: all .2s ease-in-out;
+        overflow: hidden;
     }
 
-    [open=""] &__summary {
+    [open=""] &__header {
         &::after {
             rotate: 360deg;       
         }
     }
-    &:not([open=""]) &__content {
-        font-size: 0;
+    &:not([open=""]) &__panel {
+        height: 0;
     }
 
     &--small-border {
         border-radius: var(--border-radius-small);
     }
-    &--small-border &__summary {
+    &--small-border &__header {
         border-radius: var(--border-radius-small);
     }
 }
@@ -72,7 +77,7 @@
     .collapsible {
         border-radius: var(--border-radius-small);
 
-        &__summary {
+        &__header {
             font-size: .8125rem;
             padding-top: .6em;
             padding-bottom: .6em;
@@ -83,7 +88,7 @@
                 width: .9rem;
             }
         }
-        &__content {
+        &__panel {
             font-size: .75rem;
         }
     }

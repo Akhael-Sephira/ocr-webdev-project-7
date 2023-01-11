@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useId, useState } from 'react'
 import './Slideshow.scss'
 import arrowImg from '../../assets/images/arrow.svg'
 
@@ -24,14 +24,26 @@ export default function Slideshow({pictures, className}) {
         cname += ` ${className}`;
     };
 
+    const panelId = useId();
+
     return (
-        <div className={cname}>
+        <section className={cname} aria-label="carrousel d'images">
             
-            <div className='slideshow__img'>
+            <div className='slideshow__panel' id={panelId}>
                 {
                     pictures.map((img, index) => {
+                        const current = index === currentlyShown;
                         return (
-                            <img key={index} src={img} alt={"slideshow picture " + index} style={{ opacity: index === currentlyShown ? 1 : 0 }} />
+                            <div role="group" 
+                                aria-label={`diapositive ${index + 1} sur ${pictures.length}`}
+                                style={{ opacity: current ? 1 : 0 }} 
+                                aria-hidden={!current}
+                            >
+                                <img key={index} 
+                                    src={img} 
+                                    alt=""
+                                />
+                            </div>
                         )
                     })
                 }
@@ -39,11 +51,29 @@ export default function Slideshow({pictures, className}) {
             {
                 pictures.length > 1 &&
                 <>
-                    <button className='slideshow__left-btn' onClick={() => { changeImg(-1) }}><img src={arrowImg} alt="left arrow" /></button>
-                    <button className='slideshow__right-btn' onClick={() => { changeImg(1) }}><img src={arrowImg} alt="right arrow" /></button>
+                    <button className='slideshow__left-btn' 
+                        onClick={() => { changeImg(-1) }}
+                        aria-controls={panelId}
+                        aria-label="image précédente"
+                    >
+                        <img src={arrowImg} 
+                            alt="" 
+                        />
+                    </button>
+                    <button className='slideshow__right-btn' 
+                        onClick={() => { changeImg(1) }}
+                        aria-controls={panelId}
+                        aria-label="image suivante"
+                    >
+                        <img src={arrowImg} 
+                            alt="" 
+                        />
+                    </button>
                 </>
             }
-            <p className='slideshow__indicator'>{(currentlyShown + 1) + '/' + pictures.length}</p>
-        </div>
+            <p className='slideshow__indicator'
+                aria-hidden="true"
+            >{(currentlyShown + 1) + '/' + pictures.length}</p>
+        </section>
     )
 }

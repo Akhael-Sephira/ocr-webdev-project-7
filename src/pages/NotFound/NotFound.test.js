@@ -9,7 +9,7 @@ afterEach(() => {
 describe("NotFound page", () => {
     test("rendering", () => {
         render(<MemoryRouter><NotFound></NotFound></MemoryRouter>);
-        const notFound = document.querySelector("#page-notfound");
+        const notFound = document.querySelector("#main-content.not-found");
         expect(notFound).toBeInTheDocument();
     });
 });

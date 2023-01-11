@@ -1,5 +1,6 @@
 import './App.scss';
 import { Routes, Route } from 'react-router-dom';
+import SkipToMain from './components/SkipToMain/SkipToMain';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
@@ -12,6 +13,7 @@ import lodgings from './data/logements.json'
 function App() {
   return (
     <>
+      <SkipToMain></SkipToMain>
       <Header className="large-block"></Header>
       <Routes>
         <Route path='/' element={<Home lodgings={lodgings} />} />
