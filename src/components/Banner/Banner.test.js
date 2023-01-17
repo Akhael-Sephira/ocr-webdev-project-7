@@ -18,14 +18,15 @@ describe("Banner component", () => {
     })
 
     test("title content", () => {
-        render(<Banner>{textContent}</Banner>)
+        render(<Banner title={textContent}></Banner>)
         const title = document.querySelector('.banner__title');
         expect(title).toHaveTextContent(textContent);
     })
 
-    test("image property", () => {
-        render(<Banner image={image}>{textContent}</Banner>)
+    test("image", () => {
+        render(<Banner><img src={image} /></Banner>)
         const banner = document.querySelector('.banner');
-        expect(banner).toHaveStyle(`background-image: url(${image})`);
+        const img = banner.querySelector('img');
+        expect(img.src).toEqual(image);
     })
 });

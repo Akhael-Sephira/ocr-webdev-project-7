@@ -1,8 +1,8 @@
 import { cleanup, render, screen } from '@testing-library/react'
 import Rating from './Rating'
 
-import starEmpty from "../../assets/images/star-empty.svg"
-import starFilled from "../../assets/images/star-filled.svg"
+import starEmpty from "./star-empty.svg"
+import starFilled from "./star-filled.svg"
 
 afterEach(() => {
     cleanup();
