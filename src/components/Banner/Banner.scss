@@ -7,6 +7,7 @@
     border-radius: 1rem;
     margin: 2em auto;
     min-height: 14rem;
+    min-height: fit-content;
 
     background-position: center;
     background-size: cover;
@@ -14,6 +15,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
 
     &::after { /* Text backdrop */
         content: "";
@@ -31,6 +33,28 @@
         font-size: 3rem;
         margin: 1.5em;
     }
+    & > picture {
+        
+        &:not(:only-child) {            
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+
+            & > img {
+                min-height: unset;
+            }
+        }
+        
+        & > img {
+            min-height: 14rem;
+
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+    }
 }
 
 @media (max-width: $mobile-break-point) {
@@ -42,8 +66,5 @@
             text-align: left;
             margin: 1.25em .75em;
         }   
-    }
-    .banner:not(:empty) {
-        min-height: fit-content;
     }
 }

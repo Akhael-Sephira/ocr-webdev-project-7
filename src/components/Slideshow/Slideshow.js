@@ -1,6 +1,6 @@
 import { useId, useState } from 'react'
 import './Slideshow.scss'
-import arrowImg from '../../assets/images/arrow.svg'
+import arrowImg from './arrow.svg'
 
 /**
  * Creates a slide show component.
@@ -38,8 +38,9 @@ export default function Slideshow({pictures, className}) {
                                 aria-label={`diapositive ${index + 1} sur ${pictures.length}`}
                                 style={{ opacity: current ? 1 : 0 }} 
                                 aria-hidden={!current}
+                                key={index} 
                             >
-                                <img key={index} 
+                                <img
                                     src={img} 
                                     alt=""
                                 />

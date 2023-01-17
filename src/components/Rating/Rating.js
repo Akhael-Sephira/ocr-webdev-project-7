@@ -1,6 +1,6 @@
 import './Rating.scss';
-import starEmpty from "../../assets/images/star-empty.svg"
-import starFilled from "../../assets/images/star-filled.svg"
+import starEmpty from "./star-empty.svg"
+import starFilled from "./star-filled.svg"
 
 /**
  * Creates a rating component using 5 stars.
@@ -22,7 +22,7 @@ export default function Rating({ note, className }) {
     }
 
     return (
-        <div className={cname} aria-label={`Noté ${note}/5`}>
+        <div className={cname} role="img" aria-label={`Noté ${note}/5`}>
             {[1,2,3,4,5].map((rating, index) => {
                 return (
                     <img key={index} 

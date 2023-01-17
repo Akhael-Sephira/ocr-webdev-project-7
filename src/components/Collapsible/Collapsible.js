@@ -1,6 +1,6 @@
 import './Collapsible.scss'
 
-import { useState, useId, useEffect } from 'react'
+import { useState, useId, useEffect, useRef } from 'react'
 
 /**
  * Creates a collapsible components.
@@ -15,6 +15,8 @@ export default function Collapsible({ children, summary, className, open=false }
     const idHeader = useId();
     const idPanel = useId();
 
+    const panelRef = useRef();
+
     let cname = 'collapsible';
     if (className !== undefined) {
         cname += ` ${className}`;
@@ -26,12 +28,8 @@ export default function Collapsible({ children, summary, className, open=false }
         
         /** Set the height of the panel depending on the extended state of the collapsible */
         function setPanelHeight() {
-            const panel = document.getElementById(idPanel);
-            if(!openState) {
-                panel.style.height = "0px";
-            } else {
-                panel.style.height = (panel.scrollHeight) + "px";
-            }
+            panelRef.current.style.height = openState ? 
+                (panelRef.current.scrollHeight) + "px" : "0px";
         }
     });
 
@@ -50,6 +48,7 @@ export default function Collapsible({ children, summary, className, open=false }
                  aria-labelledby={idHeader}
                  aria-hidden={!openState}
                  inert={openState ? undefined : ""}
+                 ref={panelRef}
             >
                 {children}
             </div>

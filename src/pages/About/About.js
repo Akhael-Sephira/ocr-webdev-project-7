@@ -1,7 +1,12 @@
 import Banner from "../../components/Banner/Banner";
+
+import bannerJpg from "../../assets/images/banner-about.jpg";
+import bannerJpgMobile from "../../assets/images/banner-about-mobile.jpg";
+import bannerWebp from "../../assets/images/banner-about.webp";
+import bannerWebpMobile from "../../assets/images/banner-about-mobile.webp";
+
 import Collapse from "../../components/Collapsible/Collapsible";
 
-import bannerImg from "../../assets/images/banner-about.jpg"
 import { Helmet, HelmetProvider } from "react-helmet-async";
 
 export default function About() {
@@ -14,7 +19,12 @@ export default function About() {
                 </Helmet>
             </HelmetProvider>
 
-            <Banner image={bannerImg} className="large-block" />
+            <Banner className="large-block">
+                <source srcSet={bannerWebpMobile} type="image/webp" media="(max-width: 600px)" />
+                <source srcSet={bannerJpgMobile} type="image/jpeg" media="(max-width: 600px)" />
+                <source srcSet={bannerWebp} type="image/webp" />
+                <img src={bannerJpg} alt="" />
+            </Banner>
             <Collapse className="medium-block collapsible--small-border" summary="Fiabilité">
                 <p>
                     Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées  par nos équipes.

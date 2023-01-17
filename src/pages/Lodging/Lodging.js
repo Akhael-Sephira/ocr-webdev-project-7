@@ -23,39 +23,44 @@ export default function Lodging() {
             <HelmetProvider>
                 <Helmet>
                     <html lang="fr" />
+                    <link rel="preconnect" href="https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/" />
+                    
                     <title>{lodging.title + " - Kasa"}</title>
+                    <meta name="description" content={lodging.description} />
                 </Helmet>
             </HelmetProvider>
 
             <Slideshow pictures={lodging.pictures} className="large-block"></Slideshow>
-            <div className="large-block lodging__informations">
-                    <h1 className="lodging__title">{lodging.title}</h1>
-                <p className="lodging__location">{lodging.location}</p>
-                <div className="lodging__hostinfo">
-                    <p className="lodging__hostname">{lodging.host.name}</p>
-                    <img className="lodging__hostpic" src={lodging.host.picture} alt={lodging.host.name} />
-                </div>
-                <ul className="lodging__tag-list">
-                    {lodging.tags.map((tag, index) => {
-                        return (
-                            <li key={index}><Tag>{tag}</Tag></li>
-                        )
-                    })}
-                </ul>
-                <Rating className="lodging__rating" note={lodging.rating} />
-            </div>
-            <div className="large-block lodging__collapsibles-block">
-                <Collapsible className="big-summary lodging__description" summary="Description"><p>{lodging.description}</p></Collapsible>
-                <Collapsible className="big-summary lodging__tools" summary="Équipements">
-                    <ul>
-                        {lodging.equipments.map((equipment, index) => {
+            <section>
+                <div className="large-block lodging__informations">
+                        <h1 className="lodging__title">{lodging.title}</h1>
+                    <p className="lodging__location">{lodging.location}</p>
+                    <div className="lodging__hostinfo">
+                        <p className="lodging__hostname">{lodging.host.name}</p>
+                        <img className="lodging__hostpic" src={lodging.host.picture} alt={lodging.host.name} />
+                    </div>
+                    <ul className="lodging__tag-list">
+                        {lodging.tags.map((tag, index) => {
                             return (
-                                <li key={index}>{equipment}</li>
+                                <li key={index}><Tag>{tag}</Tag></li>
                             )
                         })}
                     </ul>
-                </Collapsible>
-            </div>
+                    <Rating className="lodging__rating" note={lodging.rating} />
+                </div>
+                <div className="large-block lodging__collapsibles-block">
+                    <Collapsible className="big-summary lodging__description" summary="Description"><p>{lodging.description}</p></Collapsible>
+                    <Collapsible className="big-summary lodging__tools" summary="Équipements">
+                        <ul>
+                            {lodging.equipments.map((equipment, index) => {
+                                return (
+                                    <li key={index}>{equipment}</li>
+                                )
+                            })}
+                        </ul>
+                    </Collapsible>
+                </div>
+            </section>
         </main>
     )
 }
