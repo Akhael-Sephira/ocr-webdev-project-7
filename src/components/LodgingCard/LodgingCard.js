@@ -6,10 +6,11 @@ import { Link } from 'react-router-dom'
  * @param title defines the title of the card.
  * @param imgSrc defines the source image for the card.
  * @param id defines the associated id used for the link.
+ * @param className defines additional css classes.
  */
 export default function LodgingCard({ title, imgSrc, id, className }) {
 
-    let cname = 'lodging-card';
+    let cname = 'lodging-card'; // Default classes of the component.
     if (className !== undefined) {
         cname += ` ${className}`;
     };

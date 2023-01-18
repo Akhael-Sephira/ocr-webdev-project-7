@@ -1,12 +1,13 @@
 import logo from './logo-white.svg'
 import './Footer.scss'
 
-/*
+/**
  * Creates a footer component
+ * @param className defines additional css classes.
  */
 export default function Footer({ className }) {
 
-    let cname = 'footer';
+    let cname = 'footer'; // Default classes of the component.
     if (className !== undefined) {
         cname += ` ${className}`;
     };

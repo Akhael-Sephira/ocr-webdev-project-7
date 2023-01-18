@@ -17,7 +17,7 @@ export default function Collapsible({ children, summary, className, open=false }
 
     const panelRef = useRef();
 
-    let cname = 'collapsible';
+    let cname = 'collapsible'; // Default classes of the component.
     if (className !== undefined) {
         cname += ` ${className}`;
     };

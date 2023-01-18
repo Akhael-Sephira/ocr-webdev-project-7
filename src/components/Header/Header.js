@@ -4,10 +4,11 @@ import './Header.scss'
 
 /**
  * Creates a header component with a basic navigation.
+ * @param className defines additional css classes.
  */
 export default function Header({className}) {
 
-    let cname = 'header';
+    let cname = 'header'; // Default classes of the component.
     if (className !== undefined) {
         cname += ` ${className}`;
     };

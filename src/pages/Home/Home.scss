@@ -4,13 +4,11 @@
     padding: 2.5em;
     list-style: none;
 
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
     gap: 2.5em;
 
     > * {
-        flex: 1;
-        flex-basis: 21rem;
         aspect-ratio: 1 / 1;
     }
 }

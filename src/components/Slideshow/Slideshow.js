@@ -5,6 +5,7 @@ import arrowImg from './arrow.svg'
 /**
  * Creates a slide show component.
  * @param pictures defines all the images of the slide show.
+ * @param className defines additional css classes.
  */
 export default function Slideshow({pictures, className}) {
     const [currentlyShown, setCurrentlyShown] = useState(0);
@@ -19,7 +20,7 @@ export default function Slideshow({pictures, className}) {
         }
     }
 
-    let cname = 'slideshow';
+    let cname = 'slideshow'; // Default classes of the component.
     if (className !== undefined) {
         cname += ` ${className}`;
     };
@@ -70,11 +71,11 @@ export default function Slideshow({pictures, className}) {
                             alt="" 
                         />
                     </button>
+                    <p className='slideshow__indicator'
+                        aria-hidden="true"
+                    >{(currentlyShown + 1) + '/' + pictures.length}</p>
                 </>
             }
-            <p className='slideshow__indicator'
-                aria-hidden="true"
-            >{(currentlyShown + 1) + '/' + pictures.length}</p>
         </section>
     )
 }

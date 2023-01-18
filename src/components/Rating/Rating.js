@@ -5,12 +5,12 @@ import starFilled from "./star-filled.svg"
 /**
  * Creates a rating component using 5 stars.
  * @param note defines the number of stars filled.
- * 
+ * @param className defines additional css classes.
  * Note: The stars have only 2 states, they can't be partialy filled.
  */
 export default function Rating({ note, className }) {
 
-    let cname = 'rating';
+    let cname = 'rating'; // Default classes of the component.
     if (className !== undefined) {
         cname += ` ${className}`;
     };
@@ -23,6 +23,7 @@ export default function Rating({ note, className }) {
 
     return (
         <div className={cname} role="img" aria-label={`Noté ${note}/5`}>
+            {/* Each integer in the array correspond to a star */}
             {[1,2,3,4,5].map((rating, index) => {
                 return (
                     <img key={index} 
