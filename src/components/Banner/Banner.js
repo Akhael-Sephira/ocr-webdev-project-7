@@ -10,13 +10,10 @@ import './Banner.scss'
  */
 export default function Banner({ children, title, className, h1=true }) {
 
-    let cname = 'banner'; // Default classes of the component.
-    if (className !== undefined) {
-        cname += ` ${className}`;
-    };
+    let cssClasses = 'banner ' + (className || "");
 
     return (
-        <div className={cname}>
+        <div className={cssClasses}>
             <picture>
                 {children}
             </picture>

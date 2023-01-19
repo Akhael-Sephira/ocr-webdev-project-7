@@ -20,15 +20,12 @@ export default function Slideshow({pictures, className}) {
         }
     }
 
-    let cname = 'slideshow'; // Default classes of the component.
-    if (className !== undefined) {
-        cname += ` ${className}`;
-    };
+    let cssClasses = 'slideshow ' + (className || "");
 
     const panelId = useId();
 
     return (
-        <section className={cname} aria-label="carrousel d'images">
+        <section className={cssClasses} aria-label="carrousel d'images">
             
             <div className='slideshow__panel' id={panelId}>
                 {

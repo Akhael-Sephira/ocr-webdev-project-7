@@ -7,13 +7,10 @@ import './Tag.scss';
  */
 export default function Tag({ children, className }) {
 
-    let cname = 'tag'; // Default classes of the component.
-    if (className !== undefined) {
-        cname += ` ${className}`;
-    };
+    let cssClasses = 'tag ' + (className || "");
 
     return (
-        <div className={cname}>
+        <div className={cssClasses}>
             {children}
         </div>)
 }

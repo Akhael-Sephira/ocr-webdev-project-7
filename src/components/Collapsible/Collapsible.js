@@ -17,10 +17,7 @@ export default function Collapsible({ children, summary, className, open=false }
 
     const panelRef = useRef();
 
-    let cname = 'collapsible'; // Default classes of the component.
-    if (className !== undefined) {
-        cname += ` ${className}`;
-    };
+    let cssClasses = 'collapsible ' + (className || "");
 
     useEffect(() => {
 
@@ -34,7 +31,7 @@ export default function Collapsible({ children, summary, className, open=false }
     });
 
     return (
-        <div className={cname} open={openState}>
+        <div className={cssClasses} open={openState}>
             <button id={idHeader}
                     className='collapsible__header' 
                     onClick={() => { setOpenState(!openState) }}  

@@ -10,10 +10,7 @@ import starFilled from "./star-filled.svg"
  */
 export default function Rating({ note, className }) {
 
-    let cname = 'rating'; // Default classes of the component.
-    if (className !== undefined) {
-        cname += ` ${className}`;
-    };
+    let cssClasses = 'rating ' + (className || "");
 
     if (note > 5) {
         note = 5;
@@ -22,7 +19,7 @@ export default function Rating({ note, className }) {
     }
 
     return (
-        <div className={cname} role="img" aria-label={`Noté ${note}/5`}>
+        <div className={cssClasses} role="img" aria-label={`Noté ${note}/5`}>
             {/* Each integer in the array correspond to a star */}
             {[1,2,3,4,5].map((rating, index) => {
                 return (

@@ -10,13 +10,10 @@ import { Link } from 'react-router-dom'
  */
 export default function LodgingCard({ title, imgSrc, id, className }) {
 
-    let cname = 'lodging-card'; // Default classes of the component.
-    if (className !== undefined) {
-        cname += ` ${className}`;
-    };
+    let cssClasses = 'lodging-card ' + (className || "");
 
     return (
-        <Link className={cname} to={'/lodging/' + id}>
+        <Link className={cssClasses} to={'/lodging/' + id}>
             <img className='lodging-card__thumb' src={imgSrc} alt="" />
             { title && <span className='lodging-card__title'>{title}</span>}
         </Link>

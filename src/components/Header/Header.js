@@ -8,13 +8,10 @@ import './Header.scss'
  */
 export default function Header({className}) {
 
-    let cname = 'header'; // Default classes of the component.
-    if (className !== undefined) {
-        cname += ` ${className}`;
-    };
+    let cssClasses = 'header ' + (className || "");
 
     return (
-        <header className={cname}>
+        <header className={cssClasses}>
             <img className="header__logo" src={logo} alt="logo" />
             <nav className="header__nav">
                 <ul>

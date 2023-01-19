@@ -7,13 +7,10 @@ import './Footer.scss'
  */
 export default function Footer({ className }) {
 
-    let cname = 'footer'; // Default classes of the component.
-    if (className !== undefined) {
-        cname += ` ${className}`;
-    };
+    let cssClasses = 'footer ' + (className || "");
 
     return (
-        <footer className={cname}>
+        <footer className={cssClasses}>
             <img className='footer__logo' src={logo} alt="logo" />
             <p className='footer__copyrights'>© 2020 Kasa. All rights reserved</p>
         </footer>
